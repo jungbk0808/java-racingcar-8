@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import racingcar.view.OutputView;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class RacingGameTest {
 
     @BeforeEach
     void setUp() {
-        racingGame = new RacingGame();
+        racingGame = new RacingGame(new OutputView());
     }
 
     @Test

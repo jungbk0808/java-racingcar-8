@@ -1,9 +1,16 @@
 package racingcar.domain;
 
+import racingcar.view.OutputView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
+    private final OutputView outputView;
+
+    public RacingGame(OutputView outputView) {
+        this.outputView = outputView;
+    }
 
     public List<RacingCar> start(List<RacingCar> racingCars, int attemptCount) {
         for (int i = 0; i < attemptCount; i++) {
@@ -16,7 +23,7 @@ public class RacingGame {
     private void attemptMoveRacingCars(List<RacingCar> racingCars) {
         racingCars.forEach(racingCar -> {
             racingCar.attemptMove();
-            // TODO. 출력
+            outputView.printRacingCarDistance(racingCar);
         });
     }
 
