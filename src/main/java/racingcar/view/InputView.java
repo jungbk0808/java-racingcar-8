@@ -19,4 +19,8 @@ public class InputView {
     private void printInputMessage(String message) {
         System.out.println(message);
     }
+
+    public void closeInput() {
+        Console.close();
+    }
 }
