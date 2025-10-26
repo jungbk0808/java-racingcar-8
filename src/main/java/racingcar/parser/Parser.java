@@ -1,8 +1,12 @@
 package racingcar.parser;
 
+import racingcar.exception.UserInputException;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import static racingcar.exception.ExceptionMessage.ONLY_ALLOW_INTEGER;
 
 public class Parser {
     private static final String CAR_NAME_DELIMITER = ",";
@@ -18,4 +22,11 @@ public class Parser {
                 .toList();
     }
 
+    public int parseAttemptCount(String attemptCount) {
+        try {
+            return Integer.parseInt(attemptCount);
+        } catch (NumberFormatException e) {
+            throw UserInputException.from(ONLY_ALLOW_INTEGER);
+        }
+    }
 }

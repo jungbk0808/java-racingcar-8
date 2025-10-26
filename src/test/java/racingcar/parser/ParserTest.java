@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ParserTest {
     private Parser parser;
@@ -42,5 +43,22 @@ public class ParserTest {
         assertEquals(List.of("po bi", "wo  ni"), carNames);
     }
 
+    @Test
+    void 시도할_횟수를_숫자로_변환한다() {
+        String attemptCountString = "1";
 
+        int attemptCount = parser.parseAttemptCount(attemptCountString);
+
+        assertEquals(1, attemptCount);
+    }
+
+    @Test
+    void 시도할_횟수에_문자가_있으면_예외를_발생한다() {
+        String attemptCountString = "1회";
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> parser.parseAttemptCount(attemptCountString)
+        );
+    }
 }
