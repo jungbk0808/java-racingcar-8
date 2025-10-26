@@ -5,11 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static racingcar.constant.TestConstants.MOVING_FORWARD;
+import static racingcar.constant.TestConstants.STOP;
 
 public class RacingCarTest {
-    private static final int MOVING_FORWARD = 4;
-    private static final int STOP = 3;
-
     private RacingCar racingCar;
 
     @BeforeEach
