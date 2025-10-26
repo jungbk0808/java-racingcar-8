@@ -12,6 +12,7 @@ public class RacingCar {
 
     private RacingCar(String carName) {
         this.carName = carName;
+        this.distance = 0;
     }
 
     public static RacingCar from(String carName) {
