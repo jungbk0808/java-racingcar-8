@@ -21,7 +21,7 @@ public class ParserTest {
 
         List<String> carNames = parser.parseCars(cars);
 
-        assertEquals(carNames, List.of("pobi", "woni"));
+        assertEquals(List.of("pobi", "woni"), carNames);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ParserTest {
 
         List<String> carNames = parser.parseCars(cars);
 
-        assertEquals(carNames, List.of("pobi", "woni", ""));
+        assertEquals(List.of("pobi", "woni", ""), carNames);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ParserTest {
 
         List<String> carNames = parser.parseCars(cars);
 
-        assertEquals(carNames, List.of("po bi", "wo  ni"));
+        assertEquals(List.of("po bi", "wo  ni"), carNames);
     }
 
 

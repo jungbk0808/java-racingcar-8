@@ -18,8 +18,8 @@ public class InputViewTest extends NsTest {
 
                 UserInput inputResult = inputView.readInput();
 
-                assertEquals(inputResult.cars(), "pobi,woni");
-                assertEquals(inputResult.attemptCount(), "1");
+                assertEquals("pobi,woni", inputResult.cars());
+                assertEquals("1", inputResult.attemptCount());
             }
         );
     }
