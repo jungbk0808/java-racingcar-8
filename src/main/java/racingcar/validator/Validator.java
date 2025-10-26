@@ -14,6 +14,8 @@ public class Validator {
     private static final int CAR_NAME_MAX_LENGTH = 5;
     private static final Pattern LINE_TERMINATOR_PATTERN = Pattern.compile("[\n\r\u0085\u2028\u2029]");
 
+    private static final int MIN_ATTEMPTS = 0;
+
     public void validateCarNames(List<String> carNames) {
         validateListLength(carNames);
         validateConflict(carNames);
@@ -50,6 +52,12 @@ public class Validator {
     private void validateLineTerminator(String carName) {
         if (LINE_TERMINATOR_PATTERN.matcher(carName).find()) {
             throw UserInputException.from(CAR_NAME_CONTAINS_LINE_TERMINATOR);
+        }
+    }
+
+    public void validateAttemptCount(int attemptCount) {
+        if (attemptCount <= MIN_ATTEMPTS) {
+            throw UserInputException.from(INVALID_ATTEMPT_COUNT);
         }
     }
 }

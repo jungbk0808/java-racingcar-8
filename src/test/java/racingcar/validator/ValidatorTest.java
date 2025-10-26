@@ -72,4 +72,14 @@ public class ValidatorTest {
                 () -> validator.validateCarNames(carNames)
         );
     }
+
+    @Test
+    void 시도할_횟수는_자연수여야_한다() {
+        int attemptCount = -1;
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> validator.validateAttemptCount(attemptCount)
+        );
+    }
 }
